@@ -5,7 +5,7 @@ from lightning import Callback
 from lightning.pytorch.loggers import Logger
 from omegaconf import DictConfig
 
-from copper.utils import pylogger
+from titanium.utils import pylogger
 
 log = pylogger.get_pylogger(__name__)
 
