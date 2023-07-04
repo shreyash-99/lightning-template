@@ -195,16 +195,18 @@ class VitLitModule(LightningModule):
     ):
         super().__init__()
 
-        self.save_hyperparameters(logger=False, ignore=["model"])
+        self.save_hyperparameters(logger=False, ignore=["net"])
 
-        self.model = ViT(
-            in_channels=3,
-            patch_size=4,
-            emb_size=64,
-            img_size=32,
-            depth=6,
-            num_classes=num_classes,
-        )
+        # self.model = ViT(
+        #     in_channels=3,
+        #     patch_size=4,
+        #     emb_size=64,
+        #     img_size=32,
+        #     depth=6,
+        #     num_classes=num_classes,
+        # )
+       
+        self.model = net
 
         # loss function
         self.criterion = torch.nn.CrossEntropyLoss()

@@ -16,6 +16,7 @@ setup(
         "console_scripts": [
             "titanium_train = titanium.train:main",
             "titanium_eval = titanium.eval:main",
+            "titanium_infer = titanium.infer:main"
         ]
     },
 )
