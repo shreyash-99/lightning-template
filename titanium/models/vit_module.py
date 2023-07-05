@@ -189,9 +189,11 @@ class ViT(nn.Sequential):
 class VitLitModule(LightningModule):
     def __init__(
         self,
+        net: ViT,
         optimizer: torch.optim.Optimizer,
         scheduler: torch.optim.lr_scheduler,
         num_classes=10,
+        topk = 3
     ):
         super().__init__()
 

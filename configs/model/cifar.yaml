@@ -1,6 +1,4 @@
-_target_: titanium.models.vit_module.VitLitModule
-
-num_classes: 1000
+_target_: titanium.models.cifar_module.CIFAR10LitModule
 
 optimizer:
   _target_: torch.optim.Adam
@@ -16,10 +14,9 @@ scheduler:
   patience: 10
 
 net:
-  _target_: titanium.models.vit_module.ViT
-  in_channels: 3
-  patch_size: 4
-  emb_size: 64
-  img_size: 32
-  depth: 6
-  num_classes: 1000
+  _target_: titanium.models.components.convnet.SimpleConvNet
+  input_size: 784
+  lin1_size: 64
+  lin2_size: 128
+  lin3_size: 64
+  output_size: 10
