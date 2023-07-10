@@ -24,7 +24,10 @@ DVC(data version controlling)
 <!-- 6. [Run Hyperaparameter Search using Lightning, Optuna and Hydra](https://github.com/u6yuvi/dl-package/tree/main#run-hyperparameter-tuning-with-pytorch-lightning-hydra-and-optuna) -->
 
 ## Getting Started
-1. Clone the project 
+1. Clone the project
+```bash
+git clone https://github.com/shreyash-99/lightning-template.git
+```
 
 
 ```
