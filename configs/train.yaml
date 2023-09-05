@@ -11,6 +11,8 @@ defaults:
   - logger : many_loggers.yaml
   - callbacks: default.yaml
   - hydra: default.yaml
+  - hparams_search: null
+
 
 
   # experiment configs allow for version control of specific hyperparameters

@@ -27,8 +27,9 @@ DVC(data version controlling)
 1. Clone the project
 ```bash
 git clone https://github.com/shreyash-99/lightning-template.git
+cd lightning-template
 ```
-
+2. 
 
 ```
 copper_train --help

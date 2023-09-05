@@ -1,6 +1,8 @@
 from typing import Tuple, Dict
 import mlflow
 
+import os
+
 import lightning as L
 import torch
 import hydra
@@ -60,7 +62,7 @@ def train(cfg: DictConfig) -> Tuple[dict, dict]:
 
     if cfg.get("test"):
         log.info("Starting testing!")
-        ckpt_path = trainer.checkpouint_callback.best_model_path
+        ckpt_path = trainer.checkpoint_callback.best_model_path
         if ckpt_path == "":
             log.warning(
                 "Best ckpt not found! Using current weights for testing...")
@@ -69,7 +71,7 @@ def train(cfg: DictConfig) -> Tuple[dict, dict]:
         log.info(f"Best ckpt path: {ckpt_path}")
 
         for logger_ in logger:
-            if isinstance(logger_, L.pytorch.loggers.mlflow.MLFlowLogger)):
+            if isinstance(logger_, L.pytorch.loggers.mlflow.MLFlowLogger):
                 ckpt = torch.load(ckpt_path)
                 model.load_state_dict(ckpt["state_dict"])
                 os.environ['MLFLOW_RUN_ID'] = logger_.run_id
